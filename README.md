@@ -12,3 +12,4 @@ dependencias:
  tkinter
  pygame
 python 3
+ turtle
