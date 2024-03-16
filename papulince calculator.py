@@ -57,20 +57,16 @@ def log():
 
 def calcular():
     operacion = entrada_entry.get()
-    
-    if operacion == "pi":
+    try:
+        pi = 3.1416
+        resultado = eval(operacion)
         resultado_entry.delete(0, END)
-        resultado_entry.insert(END, "3.1416")
-    else:
-        try:
-            resultado = eval(operacion)
-            resultado_entry.delete(0, END)
-            resultado_entry.insert(END, resultado)
-            entrada_entry.delete(0, END)
-            entrada_entry.insert(END, operacion)  # Mostrar la operación en la entrada superior
-        except:
-            resultado_entry.delete(0, END)
-            resultado_entry.insert(END, "Error")
+        resultado_entry.insert(END, resultado)
+        entrada_entry.delete(0, END)
+        entrada_entry.insert(END, operacion)  # Mostrar la operación en la entrada superior
+    except:
+        resultado_entry.delete(0, END)
+        resultado_entry.insert(END, "Error")
 
 # Función para cambiar el idioma
 def cambiar_idioma():
